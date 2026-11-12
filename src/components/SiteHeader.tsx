@@ -24,16 +24,22 @@ export const SiteHeader: React.FC = () => {
     <header className="bg-surface border-b border-line sticky top-0 z-20">
       <div className="max-w-content w-full mx-auto px-4 sm:px-6 h-16 flex items-center justify-between">
         {/* Wordmark with Kesari square mark */}
-        <Link
-          to="/"
-          className="flex items-center gap-2.5 focus-visible:outline focus-visible:outline-3 focus-visible:outline-focus rounded"
-          aria-label="AICTE Complaint Monitor Home"
-        >
-          <span className="w-3.5 h-3.5 bg-kesari rounded-[1px] shrink-0" aria-hidden="true" />
-          <span className="text-xl sm:text-2xl font-bold font-display text-navy tracking-tight">
-            AICTE Complaint Monitor
+        <div className="flex items-center gap-3">
+          <Link
+            to="/"
+            className="flex items-center gap-2.5 focus-visible:outline focus-visible:outline-3 focus-visible:outline-focus rounded"
+            aria-label="AICTE Complaint Monitor Home"
+          >
+            <span className="w-3.5 h-3.5 bg-kesari rounded-[1px] shrink-0" aria-hidden="true" />
+            <span className="text-xl sm:text-2xl font-bold font-display text-navy tracking-tight">
+              AICTE Complaint Monitor
+            </span>
+          </Link>
+          <span className="hidden xl:inline-flex items-center gap-1.5 px-2 py-0.5 rounded-[2px] text-[11px] font-semibold bg-paper border border-line text-navy">
+            <span className="w-1.5 h-1.5 rounded-full bg-flag-green" aria-hidden="true" />
+            <span>Full-Stack Ready</span>
           </span>
-        </Link>
+        </div>
 
         {/* Desktop Navigation */}
         <nav className="hidden md:flex items-center gap-1 text-sm font-medium" aria-label="Main navigation">

@@ -86,7 +86,7 @@ export const Login: React.FC = () => {
           </Button>
         </div>
 
-        {/* Officer card */}
+        {/* Officer card (Finance) */}
         <div
           onClick={() => !loading && handleLogin('officer@demo.test', '/officer')}
           className="p-5 border border-line rounded bg-surface hover:border-navy hover:bg-kesari-soft/20 cursor-pointer transition-all flex items-center justify-between group focus-within:outline focus-within:outline-3 focus-within:outline-focus"
@@ -117,7 +117,43 @@ export const Login: React.FC = () => {
             disabled={loading === 'officer@demo.test'}
             className="shrink-0 pointer-events-none"
           >
-            {loading === 'officer@demo.test' ? 'Signing in…' : 'Continue as Officer'}
+            {loading === 'officer@demo.test' ? 'Signing in…' : 'Continue as Finance Officer'}
+            <ArrowRight className="w-4 h-4 ml-1.5" />
+          </Button>
+        </div>
+
+        {/* Officer card (Anti-Ragging) */}
+        <div
+          onClick={() => !loading && handleLogin('ragging.officer@demo.test', '/officer')}
+          className="p-5 border border-line rounded bg-surface hover:border-navy hover:bg-kesari-soft/20 cursor-pointer transition-all flex items-center justify-between group focus-within:outline focus-within:outline-3 focus-within:outline-focus"
+          role="button"
+          tabIndex={0}
+          onKeyDown={(e) => {
+            if (e.key === 'Enter' || e.key === ' ') {
+              e.preventDefault();
+              handleLogin('ragging.officer@demo.test', '/officer');
+            }
+          }}
+        >
+          <div className="flex items-start gap-4">
+            <div className="w-12 h-12 rounded bg-paper border border-line flex items-center justify-center shrink-0 text-navy group-hover:bg-navy group-hover:text-white transition-colors">
+              <ShieldAlert className="w-6 h-6" />
+            </div>
+            <div>
+              <span className="text-xs uppercase font-semibold text-muted tracking-wider">AICTE Desk Officer (Anti-Ragging Cell · 7-Day SLA)</span>
+              <h3 className="text-lg font-semibold text-ink mt-0.5">Kavita Menon</h3>
+              <p className="text-xs text-muted mt-1">
+                ragging.officer@demo.test · Urgent ragging incidents, 7-day mandatory fast-track window
+              </p>
+            </div>
+          </div>
+          <Button
+            variant="secondary"
+            size="small"
+            disabled={loading === 'ragging.officer@demo.test'}
+            className="shrink-0 pointer-events-none"
+          >
+            {loading === 'ragging.officer@demo.test' ? 'Signing in…' : 'Continue as Ragging Officer'}
             <ArrowRight className="w-4 h-4 ml-1.5" />
           </Button>
         </div>
